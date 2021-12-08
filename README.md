@@ -1,3 +1,20 @@
+# Iosevka Leah2
+
+This is a patched version of Iosevka by Renzhi Li.
+
+Modifications:
+* More APL-style (smaller) ∨ and ∧, ⊔, ⊣ and ⊢.
+* Thicker ⋄.
+
+Planned modifications:
+* Bigger standalone diacritics.
+
+---
+
+The original readme follows:
+
+---
+
 # Iosevka ![Version](https://img.shields.io/github/release/be5invis/Iosevka.svg)
 **Iosevka** is an *open-source*, *sans-serif* + *slab-serif*, *monospace* + *quasi‑proportional* typeface family, designed for *writing code*, using in *terminals*, and preparing *technical documents*.
 
