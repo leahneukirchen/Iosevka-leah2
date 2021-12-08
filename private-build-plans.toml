@@ -1,0 +1,50 @@
+[buildPlans.iosevka-leah2]
+family = "Iosevka Leah2"
+spacing = "fixed"
+serifs = "sans"
+no-cv-ss = true
+no-ligation = true
+
+[buildPlans.iosevka-leah2.metric-override]
+#operSize = 0.60
+#tackSize = 0.60
+
+[buildPlans.iosevka-leah2.variants]
+inherits = "ss11"
+
+[buildPlans.iosevka-leah2.variants.design]
+apl-form = "enable"
+lower-lambda = "straight-turn"
+zero = "unslashed-oval"
+percent = "rings-continuous-slash"
+
+[buildPlans.iosevka-leah2.weights.regular]
+shape = 400
+menu = 400
+css = 400
+
+[buildPlans.iosevka-leah2.weights.bold]
+shape = 700
+menu = 700
+css = 700
+
+[buildPlans.iosevka-leah2.widths.normal]
+shape = 600
+menu = 5
+css = "normal"
+
+[buildPlans.iosevka-leah2.slopes.upright]
+angle = 0
+shape = "upright"
+menu = "upright"
+css = "normal"
+
+[buildPlans.iosevka-leah2.slopes.oblique]
+angle = 9.4
+shape = "oblique"
+menu = "oblique"
+css = "oblique"
+
+[collectPlans.iosevka-leah2]
+release = true
+from = ["iosevka-leah2"]
