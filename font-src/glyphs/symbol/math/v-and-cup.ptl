@@ -26,29 +26,29 @@ glyph-block Symbol-Math-VAndCup : begin
 		include : VeeShape top bot sw
 		include : FlipAround Middle [mix top bot 0.5]
 
-	create-glyph 'wedge' 0x2227 : WedgeShape OperTop OperBot
-	create-glyph 'vee' 0x2228 : VeeShape OperTop OperBot
+	create-glyph 'wedge' 0x2227 : WedgeShape TackTop TackBot
+	create-glyph 'vee' 0x2228 : VeeShape TackTop TackBot
 
-	create-glyph 'wedge/aplThin' : WedgeShape OperTop OperBot [AdviceStroke 4]
-	create-glyph 'vee/aplThin' : VeeShape OperTop OperBot [AdviceStroke 4]
+	create-glyph 'wedge/aplThin' : WedgeShape TackTop TackBot [AdviceStroke 4]
+	create-glyph 'vee/aplThin' : VeeShape TackTop TackBot [AdviceStroke 4]
 
 	create-glyph 'mt/projection' 0x2305 : union
 		HBarTop SB RightSB OperTop OperatorStroke
 		WedgeShape (OperTop - OperatorStroke) OperBot
 
-	define [WedgeBarGap] : Math.max [AdviceStroke 4] ((OperTop - OperBot) / 8)
+	define [WedgeBarGap] : Math.max [AdviceStroke 4] ((TackTop - TackBot) / 8)
 
 	create-glyph 'math/logic/xor' 0x22BB : let [gap : WedgeBarGap] : union
-		HBarBottom SB RightSB OperBot OperatorStroke
-		VeeShape OperTop (OperBot + OperatorStroke + gap)
+		HBarBottom SB RightSB TackBot OperatorStroke
+		VeeShape TackTop (TackBot + OperatorStroke + gap)
 
 	create-glyph 'math/logic/nand' 0x22BC : let [gap : WedgeBarGap] : union
-		HBarTop SB RightSB OperTop OperatorStroke
-		WedgeShape (OperTop - OperatorStroke - gap) OperBot
+		HBarTop SB RightSB TackTop OperatorStroke
+		WedgeShape (TackTop - OperatorStroke - gap) TackBot
 
 	create-glyph 'math/logic/nor' 0x22BD : let [gap : WedgeBarGap] : union
-		HBarTop SB RightSB OperTop OperatorStroke
-		VeeShape (OperTop - OperatorStroke - gap) OperBot
+		HBarTop SB RightSB TackTop OperatorStroke
+		VeeShape (TackTop - OperatorStroke - gap) TackBot
 
 	create-glyph 'mt/perspective' 0x2306 : let [gap : WedgeBarGap] : union
 		HBarTop SB RightSB OperTop OperatorStroke
@@ -104,7 +104,7 @@ glyph-block Symbol-Math-VAndCup : begin
 	turned 'doubleWedge' 0x2A53 'doubleVee' Middle SymbolMid
 
 	create-glyph 'cup' 0x222A : glyph-proc
-		include : UShape [DivFrame 1] OperTop OperBot (stroke -- OperatorStroke)
+		include : UShape [DivFrame 1] TackTop TackBot (stroke -- OperatorStroke)
 
 	define ThinCupStroke : AdviceStroke 4
 	create-glyph 'thinCup' : glyph-proc
@@ -164,6 +164,6 @@ glyph-block Symbol-Math-VAndCup : begin
 		VBar Middle OperBot ([mix OperBot OperTop 1.2] + Stroke / 4) [AdviceStroke 3.25]
 
 	create-glyph 'squareCap' 0x2293 : glyph-proc
-		include : PiShape [DivFrame 1] OperTop OperBot (shrinkRate -- 0) (fine -- OperatorStroke) (doSerif -- false)
+		include : PiShape [DivFrame 1] TackTop TackBot (shrinkRate -- 0) (fine -- OperatorStroke) (doSerif -- false)
 
 	turned 'squareCup' 0x2294 'squareCap' Middle SymbolMid
